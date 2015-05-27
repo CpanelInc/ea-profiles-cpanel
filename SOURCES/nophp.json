@@ -1,0 +1,1 @@
+{"pkgs":["ea-apache2","ea-apr","ea-apr-util","ea-httpd","ea-mod_mpm_worker","ea-mod_ssl","ea-mod_suexec","ea-mod_deflate","ea-mod_expires","ea-mod_headers","ea-mod_proxy"],"desc":"The Apache webserver without PHP support. Useful for static content and high security servers.","version":"0.1","name":"No PHP","tags":["Apache 2.4","No PHP"]}

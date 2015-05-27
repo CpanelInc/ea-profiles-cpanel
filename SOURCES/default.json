@@ -1,0 +1,2 @@
+{"pkgs":["ea-apache2","ea-apr","ea-apr-util","ea-httpd","ea-php54","ea-php54-meta","ea-php55","ea-php55-meta","ea-php56","ea-php56-meta","ea-mod_mpm_worker","ea-mod_ssl","ea-mod_suexec","ea-mod_suphp"],"desc":"The standard Apache package with the latest PHP and most of the common modules used in hosting multiple sites and users.","version":"0.1","name":"cPanel Default","tags":["Apache 2.4","PHP 5.4","PHP 5.5","PHP 5.6"]}
+
