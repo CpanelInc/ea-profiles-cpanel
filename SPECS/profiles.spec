@@ -32,5 +32,6 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Wed May 27 2015 Darren Mobley <darren@cpanel.net> - 1.0-2
 - Updated profiles to reflect change from ea-apache2 to ea-apache24
+
 * Tue May 26 2015 Darren Mobley <darren@cpanel.net> - 1.0-1
 - Initial Profiles RPM creation
