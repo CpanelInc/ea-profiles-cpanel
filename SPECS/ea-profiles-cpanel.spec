@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -30,6 +30,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/nophp.json
 
 %changelog
+* Fri Jun 05 2015 Darren Mobley <darren@cpanel.net> - 1.0-4
+- Removed ea-httpd package from profiles
+
 * Wed Jun 03 2015 Darren Mobley <darren@cpanel.net> - 1.0-3
 - Bumped version for addition of mysql for php support
 
