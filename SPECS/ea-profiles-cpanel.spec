@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -19,7 +19,8 @@ pwd
 
 install -m 644 ../SOURCES/default.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 install -m 644 ../SOURCES/nophp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-
+install -m 644 ../SOURCES/allphp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
+install -m 644 ../SOURCES/allphp-opcache.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -28,8 +29,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 /etc/cpanel/ea4/profiles/cpanel/default.json
 /etc/cpanel/ea4/profiles/cpanel/nophp.json
+/etc/cpanel/ea4/profiles/cpanel/allphp.json
 
 %changelog
+* Mon Aug 03 2015 Dan Muey <dan@cpanel.net> - 1.0-6
+- Add allphp profiles.
+
 * Mon Aug 03 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-5
 - Added ea-apache24-mod-cgid to nophp profile.
 
