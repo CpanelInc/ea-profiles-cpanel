@@ -22,6 +22,7 @@ install -m 644 ../SOURCES/nophp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpa
 install -m 644 ../SOURCES/allphp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 install -m 644 ../SOURCES/allphp-opcache.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 install -m 644 ../SOURCES/mpm_itk.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
+install -m 644 ../SOURCES/ruid2.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -31,10 +32,13 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/default.json
 /etc/cpanel/ea4/profiles/cpanel/nophp.json
 /etc/cpanel/ea4/profiles/cpanel/allphp.json
+/etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
+/etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
+/etc/cpanel/ea4/profiles/cpanel/ruid2.json
 
 %changelog
 * Mon Aug 03 2015 Dan Muey <dan@cpanel.net> - 1.0-6
-- Add allphp and mpm_itk profiles.
+- Add allphp, mpm_itk, and ruid2 profiles.
 
 * Mon Aug 03 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-5
 - Added ea-apache24-mod-cgid to nophp profile.

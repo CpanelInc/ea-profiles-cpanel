@@ -1,0 +1,28 @@
+{
+   "version" : "0.1",
+   "desc" : "This profile includes the modules from the Basic profile. This configuration utilizes Mod Ruid2 to improve the security of your server. We recommend that you select this profile if you use either the CGI, DSO, or the suPHP PHP handler.",
+   "pkgs" : [
+      "ea-apache24",
+      "ea-apr",
+      "ea-apr-util",
+      "ea-php54",
+      "ea-php55",
+      "ea-php56",
+      "ea-apache24-mod_ruid2",
+      "ea-apache24-mod_mpm_worker",
+      "ea-apache24-mod_ssl",
+      "ea-apache24-mod_suexec",
+      "ea-apache24-mod_suphp",
+      "ea-php54-php-mysqlnd",
+      "ea-php55-php-mysqlnd",
+      "ea-php56-php-mysqlnd"
+   ],
+   "name" : "cPanel Default + RUID2",
+   "tags" : [
+      "Apache 2.4",
+      "PHP 5.4",
+      "PHP 5.5",
+      "PHP 5.6",
+      "RUID2"
+   ]
+}
