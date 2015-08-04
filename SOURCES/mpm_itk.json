@@ -11,6 +11,11 @@
       "ea-apache24-mod_mpm_itk",
       "ea-apache24-mod_mpm_prefork",
       "ea-apache24-mod_ssl",
+      "ea-apache24-mod_deflate",
+      "ea-apache24-mod_expires",
+      "ea-apache24-mod_headers",
+      "ea-apache24-mod_proxy",
+      "ea-apache24-mod-cgi",
       "ea-php54-php-mysqlnd",
       "ea-php55-php-mysqlnd",
       "ea-php56-php-mysqlnd"
