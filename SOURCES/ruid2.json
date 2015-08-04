@@ -9,7 +9,7 @@
       "ea-php55",
       "ea-php56",
       "ea-apache24-mod_ruid2",
-      "ea-apache24-mod_mpm_worker",
+      "ea-apache24-mod_mpm_prefork",
       "ea-apache24-mod_ssl",
       "ea-php54-php-mysqlnd",
       "ea-php55-php-mysqlnd",
