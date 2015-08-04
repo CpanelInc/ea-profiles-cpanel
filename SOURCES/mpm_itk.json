@@ -1,0 +1,26 @@
+{
+   "version" : "0.1",
+   "desc" : "This profile includes the modules from the Basic profile but replaces MPM Worker with MPM ITK to further increase security for your server. MPM ITK creates a more secure environment than Mod Ruid2, but uses more resources.",
+   "pkgs" : [
+      "ea-apache24",
+      "ea-apr",
+      "ea-apr-util",
+      "ea-php54",
+      "ea-php55",
+      "ea-php56",
+      "ea-apache24-mod_mpm_itk",
+      "ea-apache24-mod_mpm_prefork",
+      "ea-apache24-mod_ssl",
+      "ea-php54-php-mysqlnd",
+      "ea-php55-php-mysqlnd",
+      "ea-php56-php-mysqlnd"
+   ],
+   "name" : "cPanel Default + MPM ITK", 
+   "tags" : [
+      "Apache 2.4",
+      "PHP 5.4",
+      "PHP 5.5",
+      "PHP 5.6",
+      "MPM ITK"
+   ]
+}
