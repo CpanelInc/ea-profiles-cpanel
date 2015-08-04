@@ -11,8 +11,6 @@
       "ea-apache24-mod_ruid2",
       "ea-apache24-mod_mpm_worker",
       "ea-apache24-mod_ssl",
-      "ea-apache24-mod_suexec",
-      "ea-apache24-mod_suphp",
       "ea-php54-php-mysqlnd",
       "ea-php55-php-mysqlnd",
       "ea-php56-php-mysqlnd"

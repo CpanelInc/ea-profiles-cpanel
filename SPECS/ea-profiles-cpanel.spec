@@ -29,16 +29,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-/etc/cpanel/ea4/profiles/cpanel/default.json
-/etc/cpanel/ea4/profiles/cpanel/nophp.json
-/etc/cpanel/ea4/profiles/cpanel/allphp.json
-/etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
-/etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
-/etc/cpanel/ea4/profiles/cpanel/ruid2.json
+/etc/cpanel/ea4/profiles/cpanel/
 
 %changelog
 * Mon Aug 03 2015 Dan Muey <dan@cpanel.net> - 1.0-6
 - Add allphp, mpm_itk, and ruid2 profiles.
+- simplify %files
 
 * Mon Aug 03 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-5
 - Added ea-apache24-mod-cgid to nophp profile.
