@@ -15,7 +15,7 @@
       "ea-apache24-mod_expires",
       "ea-apache24-mod_headers",
       "ea-apache24-mod_proxy",
-      "ea-apache24-mod-cgi",
+      "ea-apache24-mod_cgi",
       "ea-php54-php-mysqlnd",
       "ea-php55-php-mysqlnd",
       "ea-php56-php-mysqlnd"

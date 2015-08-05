@@ -12,7 +12,7 @@
       "ea-apache24-mod_expires",
       "ea-apache24-mod_headers",
       "ea-apache24-mod_proxy",
-      "ea-apache24-mod-cgid"
+      "ea-apache24-mod_cgid"
    ],
    "name" : "No PHP",
    "tags" : [
