@@ -10,6 +10,11 @@
       "ea-php56",
       "ea-apache24-mod_mpm_worker",
       "ea-apache24-mod_ssl",
+      "ea-apache24-mod_deflate",
+      "ea-apache24-mod_expires",
+      "ea-apache24-mod_headers",
+      "ea-apache24-mod_proxy",
+      "ea-apache24-mod_cgid",
       "ea-apache24-mod_suexec",
       "ea-apache24-mod_suphp",
       "ea-php54-build",
@@ -53,7 +58,6 @@
       "ea-php54-php-xmlrpc",
       "ea-php54-php-zip",
       "ea-php54-runtime",
-      "ea-php54-scldevel",
       "ea-php55-build",
       "ea-php55-php",
       "ea-php55-php-bcmath",
@@ -96,7 +100,6 @@
       "ea-php55-php-opcache",
       "ea-php55-php-zip",
       "ea-php55-runtime",
-      "ea-php55-scldevel",
       "ea-php56-build",
       "ea-php56-php",
       "ea-php56-php-bcmath",
@@ -138,8 +141,7 @@
       "ea-php56-php-xmlrpc",
       "ea-php56-php-opcache",
       "ea-php56-php-zip",
-      "ea-php56-runtime",
-      "ea-php56-scldevel"
+      "ea-php56-runtime"
    ],
    "name" : "All PHP Options + OpCache",
    "tags" : [

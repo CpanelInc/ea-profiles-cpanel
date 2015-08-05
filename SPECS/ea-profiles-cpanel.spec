@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -32,7 +32,10 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/
 
 %changelog
-* Mon Aug 04 2015 Dan Muey <dan@cpanel.net> = 1.0-7
+* Wed Aug 05 2015 Dan Muey <dan@cpanel.net> - 1.0-8
+- ensure some basics in all profiles
+
+* Tue Aug 04 2015 Dan Muey <dan@cpanel.net> = 1.0-7
 - use prefork mpm for ruid2
 
 * Mon Aug 03 2015 Dan Muey <dan@cpanel.net> - 1.0-6
