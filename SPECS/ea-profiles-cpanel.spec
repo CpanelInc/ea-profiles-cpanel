@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -32,6 +32,10 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/
 
 %changelog
+* Tue Aug 11 2015 Trinity Quirk <trinity.quirk@cpanel.net> - 1.0-9
+- Updated all profiles to approximately match those provided by EA3
+- Added new mcrypt extension to all profiles
+
 * Wed Aug 05 2015 Dan Muey <dan@cpanel.net> - 1.0-8
 - ensure some basics in all profiles
 
