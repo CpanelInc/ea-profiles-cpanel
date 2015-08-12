@@ -45,10 +45,10 @@
       "ea-php56-php-gd",
       "ea-php56-php-imap",
       "ea-php56-php-mcrypt",
-      "ea-php56-php-mysqlnd"
+      "ea-php56-php-mysqlnd",
       "ea-php56-php-pdo",
       "ea-php56-php-posix",
-      "ea-php56-php-sockets",
+      "ea-php56-php-sockets"
    ],
    "name" : "cPanel Default + MPM ITK",
    "tags" : [
