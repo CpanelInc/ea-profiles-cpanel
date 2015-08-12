@@ -1,5 +1,5 @@
 {
-   "version" : "0.1",
+   "version" : "0.2",
    "desc" : "This is the default cPanel profile plus every PHP option (sans recode and opcache due to incompatibilities). This package can host multiple sites and users.",
    "pkgs" : [
       "ea-apache24",
@@ -42,6 +42,7 @@
       "ea-php54-php-ioncube",
       "ea-php54-php-ldap",
       "ea-php54-php-mbstring",
+      "ea-php54-php-mcrypt",
       "ea-php54-php-mysqlnd",
       "ea-php54-php-odbc",
       "ea-php54-php-pdo",
@@ -84,6 +85,7 @@
       "ea-php55-php-ioncube",
       "ea-php55-php-ldap",
       "ea-php55-php-mbstring",
+      "ea-php55-php-mcrypt",
       "ea-php55-php-mysqlnd",
       "ea-php55-php-odbc",
       "ea-php55-php-pdo",
@@ -126,6 +128,7 @@
       "ea-php56-php-ioncube",
       "ea-php56-php-ldap",
       "ea-php56-php-mbstring",
+      "ea-php56-php-mcrypt",
       "ea-php56-php-mysqlnd",
       "ea-php56-php-odbc",
       "ea-php56-php-pdo",
