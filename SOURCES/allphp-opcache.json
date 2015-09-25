@@ -17,6 +17,7 @@
       "ea-apache24-mod_cgid",
       "ea-apache24-mod_suexec",
       "ea-apache24-mod_suphp",
+      "ea-apache24-mod_security2",
       "ea-php54-build",
       "ea-php54-php",
       "ea-php54-php-bcmath",
