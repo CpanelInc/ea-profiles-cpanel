@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        10%{?dist}
+Release:        11%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -32,6 +32,9 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/
 
 %changelog
+* Mon Nov 10 2015 Dan Muey <dan@cpanel.net> - 1.0-11
+- ensure no profiles have 2 or more DSO PHP RPMs
+
 * Wed Oct 28 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-10
 - Add php-xml to all php profiles
 
