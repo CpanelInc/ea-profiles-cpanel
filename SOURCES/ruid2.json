@@ -40,6 +40,7 @@
       "ea-php55-php-posix",
       "ea-php55-php-sockets",
       "ea-php55-php-xml",
+      "ea-php56-php",
       "ea-php56-php-bcmath",
       "ea-php56-php-calendar",
       "ea-php56-php-curl",
