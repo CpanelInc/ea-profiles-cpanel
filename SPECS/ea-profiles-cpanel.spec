@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -22,7 +22,7 @@ install -m 644 ../SOURCES/nophp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpa
 install -m 644 ../SOURCES/allphp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 install -m 644 ../SOURCES/allphp-opcache.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 install -m 644 ../SOURCES/mpm_itk.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/ruid2.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
+install -m 644 ../SOURCES/worker.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -30,6 +30,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 /etc/cpanel/ea4/profiles/cpanel/
+
+%changelog
+* Tues May 15 2016 Darren Mobley <darren@cpanel.net> - 1.0-12
+- Removed PHP 5.4 from profiles with PHP
+- Adding PHP 7.0 to profiles with PHP
+- Added PHP-FPM to all profiles that have PHP
+- Moved the previous default profile to a "worker" profile
+- Created a new default profile from the old ruid2 profile that uses mpm_prefork, ruid2
 
 %changelog
 * Mon Nov 10 2015 Dan Muey <dan@cpanel.net> - 1.0-11
