@@ -1,6 +1,6 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Configuration
@@ -32,7 +32,10 @@ rm -rf $RPM_BUILD_ROOT
 /etc/cpanel/ea4/profiles/cpanel/
 
 %changelog
-* Tues May 15 2016 Darren Mobley <darren@cpanel.net> - 1.0-12
+* Mon May 23 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-13
+- Fixed previous changelog entry
+
+* Tue May 15 2016 Darren Mobley <darren@cpanel.net> - 1.0-12
 - Removed PHP 5.4 from profiles with PHP
 - Adding PHP 7.0 to profiles with PHP
 - Added PHP-FPM to all profiles that have PHP
