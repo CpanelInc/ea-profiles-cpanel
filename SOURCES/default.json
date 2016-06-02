@@ -18,6 +18,7 @@
       "ea-apache24-mod_proxy_fcgi",
       "ea-apache24-mod_cgi",
       "ea-apache24-mod_unique_id",
+      "ea-apache24-mod_security2",
       "ea-php55-php-bcmath",
       "ea-php55-php-calendar",
       "ea-php55-php-curl",

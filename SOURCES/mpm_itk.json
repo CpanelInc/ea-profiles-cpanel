@@ -17,6 +17,7 @@
       "ea-apache24-mod_proxy",
       "ea-apache24-mod_cgi",
       "ea-apache24-mod_proxy_fcgi",
+      "ea-apache24-mod_security2",
       "ea-php70-php-bcmath",
       "ea-php70-php-calendar",
       "ea-php70-php-curl",
