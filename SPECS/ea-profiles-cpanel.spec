@@ -1,9 +1,11 @@
+%define release_prefix 14
+
 Name:           ea-profiles-cpanel
 Version:        1.0
-Release:        13%{?dist}
+Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
-Group:          System Environment/Configuration
+Group:          System Environment/Libraries
 URL:            http://www.cpanel.net
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -12,26 +14,22 @@ This package provides the default profiles available from cPanel
 to choose from with EasyApache4.
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -m 755 -d $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel
-echo -n "Current working dir = "
-pwd
-
-install -m 644 ../SOURCES/default.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/nophp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/allphp.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/allphp-opcache.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/mpm_itk.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
-install -m 644 ../SOURCES/worker.json $RPM_BUILD_ROOT/etc/cpanel/ea4/profiles/cpanel/
+rm -rf %{buildroot}
+%{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
+install %{_sourcedir}/*.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
-/etc/cpanel/ea4/profiles/cpanel/
+%defattr(0644,root,root,0755)
+/etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Thu Jun 02 2016 S. Kurt Newman <kurt.newman@cpanel.net> - 1.0-14
+- Added mod_security2 apache module to default and itk profiles (EA-4655)
+- Spec file cleanup (EA-4655)
+
 * Mon May 23 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-13
 - Fixed previous changelog entry
 
@@ -42,7 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 - Moved the previous default profile to a "worker" profile
 - Created a new default profile from the old ruid2 profile that uses mpm_prefork, ruid2
 
-%changelog
 * Mon Nov 10 2015 Dan Muey <dan@cpanel.net> - 1.0-11
 - ensure no profiles have 2 or more DSO PHP RPMs
 
@@ -61,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Mon Aug 03 2015 Dan Muey <dan@cpanel.net> - 1.0-6
 - Add allphp, mpm_itk, and ruid2 profiles.
-- simplify %files
+- simplify files rpm section
 
 * Mon Aug 03 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-5
 - Added ea-apache24-mod-cgid to nophp profile.
