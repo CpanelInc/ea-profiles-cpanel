@@ -1,4 +1,4 @@
-%define release_prefix 14
+%define release_prefix 15
 
 Name:           ea-profiles-cpanel
 Version:        1.0
@@ -26,6 +26,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Mon Jun 20 2016 Sricharan Angara <charan@cpanel.net> - 1.0-15
+- Removed duplicate PHP FPM packages for PHP 5.5, PHP 5.6 and PHP 7.0 respectively from allphp.json and allphp-opcache.json profiles. (ZC-1956)
+
 * Thu Jun 02 2016 S. Kurt Newman <kurt.newman@cpanel.net> - 1.0-14
 - Added mod_security2 apache module to default and itk profiles (EA-4655)
 - Spec file cleanup (EA-4655)
