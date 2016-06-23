@@ -29,6 +29,9 @@ rm -rf %{buildroot}
 * Mon Jun 20 2016 Dan Muey <dan@cpanel.net> - 1.0-25
 - EA-4383: Update Release value to OBS-proof versioning
 
+* Mon Jun 20 2016 Sricharan Angara <charan@cpanel.net> - 1.0-15
+- Removed duplicate PHP FPM packages for PHP 5.5, PHP 5.6 and PHP 7.0 respectively from allphp.json and allphp-opcache.json profiles. (ZC-1956)
+
 * Thu Jun 02 2016 S. Kurt Newman <kurt.newman@cpanel.net> - 1.0-14
 - Added mod_security2 apache module to default and itk profiles (EA-4655)
 - Spec file cleanup (EA-4655)
