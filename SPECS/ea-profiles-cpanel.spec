@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 25
+%define release_prefix 26
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -26,6 +26,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Tue Aug 16 2016 Dan Muey <dan@cpanel.net> - 1.0-26
+- EA-5025: remove packages from profiles that do not exist
+
 * Mon Jun 20 2016 Dan Muey <dan@cpanel.net> - 1.0-25
 - EA-4383: Update Release value to OBS-proof versioning
 
