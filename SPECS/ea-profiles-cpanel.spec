@@ -3,12 +3,13 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 26
+%define release_prefix 27
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
 Group:          System Environment/Libraries
 URL:            http://www.cpanel.net
+Vendor:         cPanel, Inc.
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -28,6 +29,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Fri Dec 16 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-27
+- EA-5493: Added vendor field 
+
 * Tue Aug 16 2016 Dan Muey <dan@cpanel.net> - 1.0-26
 - EA-5025: remove packages from profiles that do not exist
 
