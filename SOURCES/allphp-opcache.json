@@ -44,6 +44,7 @@
       "ea-php70-php-mcrypt",
       "ea-php70-php-mysqlnd",
       "ea-php70-php-odbc",
+      "ea-php70-php-opcache",
       "ea-php70-php-pdo",
       "ea-php70-php-pgsql",
       "ea-php70-php-posix",
