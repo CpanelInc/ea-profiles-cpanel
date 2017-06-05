@@ -3,7 +3,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 28
+%define release_prefix 29
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -29,6 +29,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Sun May 21 2017 Rishwanth Yeddula <rish@cpanel.net> - 1.0-29
+- Added a basic "Ruby via Passenger" profile
+
 * Tue Apr 25 2017 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-28
 - Added PHP70 opcache to allphp-opcache profile
 
