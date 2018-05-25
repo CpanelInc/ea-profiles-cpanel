@@ -1,3 +1,5 @@
+%define release_prefix 14
+
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
