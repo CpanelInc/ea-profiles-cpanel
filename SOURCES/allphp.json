@@ -172,10 +172,7 @@
       "ea-php56-php-xmlrpc",
       "ea-php56-php-zendguard",
       "ea-php56-php-zip",
-      "ea-php56-runtime",
-      "ea-php55-php-fpm",
-      "ea-php56-php-fpm",
-      "ea-php70-php-fpm"
+      "ea-php56-runtime"
    ],
    "name" : "All PHP Options + ZendGuard",
    "tags" : [
