@@ -3,7 +3,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 30
+%define release_prefix 33
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -29,6 +29,15 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Tue Jun 05 2018 Cory McIntire <cory@cpanel.net> - 1.0-33
+- EA-7541: remove ea-php55-php-fpm and duplicated ea-php56/70-php-fpm
+
+* Mon May 07 2018 Cory McIntire <cory@cpanel.net> - 1.0-32
+- EA-7447: Add 7.2 to All PHPs and All PHPs opcache profiles
+
+* Tue Apr 17 2018 Daniel Muey <dan@cpanel.net> - 1.0-31
+- EA-7172: Remove EOL PHPs from profiles, add 7.1
+
 * Thu Jun 08 2017 Rishwanth Yeddula <rish@cpanel.net> - 1.0-30
 - Update the "Ruby via Passenger" profile to include additional Ruby gems
 
@@ -39,7 +48,7 @@ rm -rf %{buildroot}
 - Added PHP70 opcache to allphp-opcache profile
 
 * Fri Dec 16 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-27
-- EA-5493: Added vendor field 
+- EA-5493: Added vendor field
 
 * Tue Aug 16 2016 Dan Muey <dan@cpanel.net> - 1.0-26
 - EA-5025: remove packages from profiles that do not exist
