@@ -1,4 +1,4 @@
-%define release_prefix 14
+%define release_prefix 15
 
 Name:           ea-profiles-cpanel
 Version:        1.0
@@ -29,6 +29,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Wed Nov 28 2018 Daniel Muey <dan@cpanel.net> - 1.0-15
+- ZC-4444: Add lsapi profile
+
 * Tue Jun 05 2018 Cory McIntire <cory@cpanel.net> - 1.0-33
 - EA-7541: remove ea-php55-php-fpm and duplicated ea-php56/70-php-fpm
 
