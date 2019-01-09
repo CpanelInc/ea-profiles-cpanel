@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 35
+%define release_prefix 36
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -27,6 +27,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Wed Jan 09 2019 Daniel Muey <dan@cpanel.net> - 1.0-36
+- remove lsapi profile until the yum repo problem on CL boxes can be addressed
+
 * Wed Jan 02 2019 Tim Mullin <tim@cpanel.net> - 1.0-35
 - EA-8110: Correct description for the "cPanel Default + MPM ITK" profile
 
