@@ -28,7 +28,7 @@
       "ea-php71-php-posix",
       "ea-php71-php-sockets",
       "ea-php71-php-xml",
-      "ea-php71-php-fpm",
+      "ea-php71-php-fpm"
    ],
    "name" : "cPanel Default + MPM ITK",
    "tags" : [

@@ -94,7 +94,7 @@
       "ea-php71-php-xml",
       "ea-php71-php-xmlrpc",
       "ea-php71-php-zip",
-      "ea-php71-runtime",
+      "ea-php71-runtime"
    ],
    "name" : "All PHP Options + OpCache",
    "tags" : [
