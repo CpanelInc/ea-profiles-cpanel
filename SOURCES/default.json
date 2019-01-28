@@ -35,6 +35,6 @@
    "name" : "cPanel Default",
    "tags" : [
       "Apache 2.4",
-      "PHP 7.1",
+      "PHP 7.1"
    ]
 }
