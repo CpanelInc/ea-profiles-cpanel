@@ -49,7 +49,8 @@
       "ea-ruby24-ruby-irb",
       "ea-ruby24-ruby-libs",
       "ea-ruby24-ruby-wrapper",
-      "ea-ruby24-runtime"
+      "ea-ruby24-runtime",
+      "ea-nodejs10"
    ],
    "desc" : "This profile installs standard Apache packages with mod_passenger and ea-ruby24. This profile enables the Application Manager interface in cPanel, which allows users to configure Ruby applications to be deployed via mod_passenger.",
    "tags" : [
