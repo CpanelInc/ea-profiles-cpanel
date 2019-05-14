@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 36
+%define release_prefix 40
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -27,6 +27,18 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Thu Apr 25 2019 Daniel Muey <dan@cpanel.net> - 1.0-40
+- ZC-4685: Add ea-nodejs10 to passenger profile
+
+* Mon Feb 11 2019 Daniel Muey <dan@cpanel.net> - 1.0-39
+- ZC-4701: Add PHP 7.3 to the all-PHP profiles
+
+* Tue Jan 29 2019 Daniel Muey <dan@cpanel.net> - 1.0-38
+- ZC-4736: Add 7.2 to PHP profiles that should have it
+
+* Thu Jan 24 2019 Justin Schaefer <justins@cpanel.net> - 1.0-37
+- EA-4717 Remove PHP 5.6 and 7.0 from default EasyApache profiles
+
 * Wed Jan 09 2019 Daniel Muey <dan@cpanel.net> - 1.0-36
 - remove lsapi profile until the yum repo problem on CL boxes can be addressed
 
