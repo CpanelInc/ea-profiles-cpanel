@@ -7,6 +7,7 @@
       "ea-apr-util",
       "ea-php71",
       "ea-php72",
+      "ea-php73",
       "ea-apache24-mod_mpm_prefork",
       "ea-apache24-mod_ruid2",
       "ea-apache24-mod_ssl",
@@ -44,12 +45,26 @@
       "ea-php72-php-sockets",
       "ea-php72-php-xml",
       "ea-php72-runtime",
-      "ea-php72-php-fpm"
+      "ea-php72-php-fpm",
+      "ea-php73-php-bcmath",
+      "ea-php73-php-calendar",
+      "ea-php73-php-curl",
+      "ea-php73-php-ftp",
+      "ea-php73-php-gd",
+      "ea-php73-php-imap",
+      "ea-php73-php-mysqlnd",
+      "ea-php73-php-pdo",
+      "ea-php73-php-posix",
+      "ea-php73-php-sockets",
+      "ea-php73-php-xml",
+      "ea-php73-runtime",
+      "ea-php73-php-fpm"
    ],
    "name" : "cPanel Default",
    "tags" : [
       "Apache 2.4",
       "PHP 7.1",
-      "PHP 7.2"
+      "PHP 7.2",
+      "PHP 7.3"
    ]
 }
