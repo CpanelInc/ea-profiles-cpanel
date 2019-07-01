@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 40
+%define release_prefix 41
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -27,6 +27,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Thu Jun 06 2019 Daniel Muey <dan@cpanel.net> - 1.0-41
+- ZC-4757: Add PHP 7.3 to the default profile
+
 * Thu Apr 25 2019 Daniel Muey <dan@cpanel.net> - 1.0-40
 - ZC-4685: Add ea-nodejs10 to passenger profile
 
