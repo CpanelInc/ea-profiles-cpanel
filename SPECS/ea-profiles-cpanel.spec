@@ -27,8 +27,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
-* Wed Feb 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
+* Thu Mar 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
 - ZC-5923: Add PHP 7.4 where appropriate
+- ZC-6266: Add PHP 7.4 to the tags section (Julian Brown <julian.brown@cpanel.net>)
 
 * Mon Feb 17 2020 Tim Mullin <tim@cpanel.net> - 1.0-43
 - EA-8864: Add php73 to the mpm_itk and worker profiles
