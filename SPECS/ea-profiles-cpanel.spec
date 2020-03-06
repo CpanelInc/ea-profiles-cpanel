@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 44
+%define release_prefix 45
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -27,6 +27,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Fri Mar 06 2020 Cory McIntire <cory@cpanel.net> - 1.0-45
+- EA-8905: Rolling “ea-profiles-cpanel” back to “0cc773ca22ab1a9b584865da02e859101cea9442”: Breaking smokers
+
 * Thu Mar 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
 - ZC-5923: Add PHP 7.4 where appropriate
 - ZC-6266: Add PHP 7.4 to the tags section (Julian Brown <julian.brown@cpanel.net>)
