@@ -30,7 +30,7 @@ rm -rf %{buildroot}
 * Fri Mar 06 2020 Cory McIntire <cory@cpanel.net> - 1.0.45
 - EA-8905: Revert PHP 7.4 from profiles as it was breaking smokers.
 
-* Wed Feb 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
+* Tue Feb 18 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
 - ZC-5923: Add PHP 7.4 where appropriate
 
 * Mon Feb 17 2020 Tim Mullin <tim@cpanel.net> - 1.0-43
