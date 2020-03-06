@@ -27,12 +27,11 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
-* Fri Mar 06 2020 Cory McIntire <cory@cpanel.net> - 1.0-45
-- EA-8905: Rolling “ea-profiles-cpanel” back to “0cc773ca22ab1a9b584865da02e859101cea9442”: Breaking smokers
+* Fri Mar 06 2020 Cory McIntire <cory@cpanel.net> - 1.0.45
+- EA-8905: Revert PHP 7.4 from profiles as it was breaking smokers.
 
-* Thu Mar 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
+* Wed Feb 05 2020 Daniel Muey <dan@cpanel.net> - 1.0-44
 - ZC-5923: Add PHP 7.4 where appropriate
-- ZC-6266: Add PHP 7.4 to the tags section (Julian Brown <julian.brown@cpanel.net>)
 
 * Mon Feb 17 2020 Tim Mullin <tim@cpanel.net> - 1.0-43
 - EA-8864: Add php73 to the mpm_itk and worker profiles
