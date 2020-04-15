@@ -28,7 +28,8 @@ rm -rf %{buildroot}
 
 %changelog
 * Wed Apr 15 2020 Julian Brown <julian.brown@cpanel.net> - 1.0-46
-- ZC-6297: Add PHP 74 to all and all opcache
+- ZC-6297: Add PHP 7.4 to all and all opcache
+- ZC-6283: order allphp* tags lowest to highest like the rest
 
 * Fri Mar 06 2020 Cory McIntire <cory@cpanel.net> - 1.0.45
 - EA-8905: Revert PHP 7.4 from profiles as it was breaking smokers.
