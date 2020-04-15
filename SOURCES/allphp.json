@@ -8,6 +8,7 @@
       "ea-php72",
       "ea-php71",
       "ea-php73",
+      "ea-php74",
       "ea-apache24-mod_mpm_worker",
       "ea-apache24-mod_ssl",
       "ea-apache24-mod_deflate",
