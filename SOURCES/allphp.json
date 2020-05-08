@@ -126,7 +126,7 @@
       "ea-php72-php-xml",
       "ea-php72-php-xmlrpc",
       "ea-php72-php-zip",
-      "ea-php72-runtime",
+      "ea-php72-runtime"
    ],
    "name" : "All PHP Options + ZendGuard",
    "tags" : [
