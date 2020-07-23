@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 47
+%define release_prefix 48
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -27,6 +27,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Thu Jul 23 2020 Tim Mullin <tim@cpanel.net> - 1.0-48
+- EA-9154: Add iconv and mbstring to the mpm_itk and worker profiles
+
 * Thu May 07 2020 Tim Mullin <tim@cpanel.net> - 1.0-47
 - EA-9045: Remove PHP 7.1 from the profiles since it is EOL
 

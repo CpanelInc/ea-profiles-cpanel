@@ -1,5 +1,5 @@
 {
-   "version" : "0.2",
+   "version" : "0.3",
    "desc" : "This profile includes the modules from the Basic profile but replaces MPM Prefork and Mod Ruid2 with MPM ITK to further increase security for your server. MPM ITK creates a more secure environment than Mod Ruid2, but uses more resources. Note: Some feature of MPM ITK are not compatible with CentOS 6 kernels, see our documentation for more information.",
    "pkgs" : [
       "ea-apache24",
@@ -22,7 +22,9 @@
       "ea-php72-php-curl",
       "ea-php72-php-ftp",
       "ea-php72-php-gd",
+      "ea-php72-php-iconv",
       "ea-php72-php-imap",
+      "ea-php72-php-mbstring",
       "ea-php72-php-mysqlnd",
       "ea-php72-php-pdo",
       "ea-php72-php-posix",
@@ -34,7 +36,9 @@
       "ea-php73-php-curl",
       "ea-php73-php-ftp",
       "ea-php73-php-gd",
+      "ea-php73-php-iconv",
       "ea-php73-php-imap",
+      "ea-php73-php-mbstring",
       "ea-php73-php-mysqlnd",
       "ea-php73-php-pdo",
       "ea-php73-php-posix",
