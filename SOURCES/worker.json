@@ -1,5 +1,5 @@
 {
-   "version" : "0.3",
+   "version" : "0.4",
    "desc" : "This profile uses the worker MPM and includes suexec, suphp and mod_security2 to improve the security of your server.",
    "pkgs" : [
       "ea-apache24",
@@ -23,7 +23,9 @@
       "ea-php72-php-curl",
       "ea-php72-php-ftp",
       "ea-php72-php-gd",
+      "ea-php72-php-iconv",
       "ea-php72-php-imap",
+      "ea-php72-php-mbstring",
       "ea-php72-php-mysqlnd",
       "ea-php72-php-pdo",
       "ea-php72-php-posix",
@@ -35,7 +37,9 @@
       "ea-php73-php-curl",
       "ea-php73-php-ftp",
       "ea-php73-php-gd",
+      "ea-php73-php-iconv",
       "ea-php73-php-imap",
+      "ea-php73-php-mbstring",
       "ea-php73-php-mysqlnd",
       "ea-php73-php-pdo",
       "ea-php73-php-posix",
