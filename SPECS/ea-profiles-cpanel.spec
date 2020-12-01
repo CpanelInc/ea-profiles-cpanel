@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 50
+%define release_prefix 51
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -19,6 +19,14 @@ rm -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
 install %{_sourcedir}/*.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/
 
+%if 0%{?rhel} > 6
+    rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
+    mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+%else
+    rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json
+    mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+%endif
+
 %clean
 rm -rf %{buildroot}
 
@@ -27,6 +35,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Mon Nov 30 2020 Daniel Muey <dan@cpanel.net> - 1.0-51
+- ZC-7620: Update Ruby profile for 2.7 on C7 and C8
+
 * Mon Dec 07 2020 Cory McIntire <cory@cpanel.net> - 1.0-50
 - EA-9444: Remove ea-php72 from all profiles
 
@@ -116,14 +127,14 @@ rm -rf %{buildroot}
 * Mon May 23 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-13
 - Fixed previous changelog entry
 
-* Tue May 15 2016 Darren Mobley <darren@cpanel.net> - 1.0-12
+* Tue May 17 2016 Darren Mobley <darren@cpanel.net> - 1.0-12
 - Removed PHP 5.4 from profiles with PHP
 - Adding PHP 7.0 to profiles with PHP
 - Added PHP-FPM to all profiles that have PHP
 - Moved the previous default profile to a "worker" profile
 - Created a new default profile from the old ruid2 profile that uses mpm_prefork, ruid2
 
-* Mon Nov 10 2015 Dan Muey <dan@cpanel.net> - 1.0-11
+* Tue Nov 10 2015 Dan Muey <dan@cpanel.net> - 1.0-11
 - ensure no profiles have 2 or more DSO PHP RPMs
 
 * Wed Oct 28 2015 Julian Brown <julian.brown@cpanel.net> - 1.0-10
