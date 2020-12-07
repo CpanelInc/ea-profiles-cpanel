@@ -1,11 +1,10 @@
 {
-   "version" : "0.4",
+   "version" : "0.5",
    "desc" : "This profile uses the worker MPM and includes suexec, suphp and mod_security2 to improve the security of your server.",
    "pkgs" : [
       "ea-apache24",
       "ea-apr",
       "ea-apr-util",
-      "ea-php72",
       "ea-php73",
       "ea-apache24-mod_mpm_worker",
       "ea-apache24-mod_ssl",
@@ -18,20 +17,6 @@
       "ea-apache24-mod_suphp",
       "ea-apache24-mod_security2",
       "ea-apache24-mod_proxy_fcgi",
-      "ea-php72-php-bcmath",
-      "ea-php72-php-calendar",
-      "ea-php72-php-curl",
-      "ea-php72-php-ftp",
-      "ea-php72-php-gd",
-      "ea-php72-php-iconv",
-      "ea-php72-php-imap",
-      "ea-php72-php-mbstring",
-      "ea-php72-php-mysqlnd",
-      "ea-php72-php-pdo",
-      "ea-php72-php-posix",
-      "ea-php72-php-sockets",
-      "ea-php72-php-xml",
-      "ea-php72-php-fpm",
       "ea-php73-php-bcmath",
       "ea-php73-php-calendar",
       "ea-php73-php-curl",
@@ -50,7 +35,6 @@
    "name" : "cPanel Worker MPM",
    "tags" : [
       "Apache 2.4",
-      "PHP 7.2",
       "PHP 7.3"
    ]
 }
