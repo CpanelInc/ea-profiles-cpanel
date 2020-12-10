@@ -35,7 +35,7 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
-* Mon Nov 30 2020 Daniel Muey <dan@cpanel.net> - 1.0-51
+* Thu Dec 10 2020 Daniel Muey <dan@cpanel.net> - 1.0-51
 - ZC-7620: Update Ruby profile for 2.7 on C7 and C8
 
 * Mon Dec 07 2020 Cory McIntire <cory@cpanel.net> - 1.0-50
