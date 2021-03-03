@@ -47,12 +47,29 @@
       "ea-php74-php-sockets",
       "ea-php74-php-xml",
       "ea-php74-runtime",
-      "ea-php74-php-fpm"
+      "ea-php74-php-fpm",
+      "ea-php80",
+      "ea-php80-php-bcmath",
+      "ea-php80-php-calendar",
+      "ea-php80-php-curl",
+      "ea-php80-php-ftp",
+      "ea-php80-php-gd",
+      "ea-php80-php-iconv",
+      "ea-php80-php-imap",
+      "ea-php80-php-mbstring",
+      "ea-php80-php-mysqlnd",
+      "ea-php80-php-pdo",
+      "ea-php80-php-posix",
+      "ea-php80-php-sockets",
+      "ea-php80-php-xml",
+      "ea-php80-runtime",
+      "ea-php80-php-fpm"
    ],
    "tags" : [
       "Apache 2.4",
       "PHP 7.3",
-      "PHP 7.4"
+      "PHP 7.4",
+      "PHP 8.0"
    ],
-   "version" : "0.5"
+   "version" : 0.6
 }
