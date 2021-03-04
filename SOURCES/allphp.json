@@ -1,6 +1,6 @@
 {
-   "version" : "0.3",
    "desc" : "This is the default cPanel profile plus PHP 7.4 plus every PHP option (sans recode and opcache due to incompatibilities). This package can host multiple sites and users.",
+   "name" : "All PHP Options + ZendGuard",
    "pkgs" : [
       "ea-apache24",
       "ea-apr",
@@ -89,13 +89,50 @@
       "ea-php73-php-xml",
       "ea-php73-php-xmlrpc",
       "ea-php73-php-zip",
-      "ea-php73-runtime"
+      "ea-php73-runtime",
+      "ea-php80",
+      "ea-php80-php-bcmath",
+      "ea-php80-php-bz2",
+      "ea-php80-php-calendar",
+      "ea-php80-php-cli",
+      "ea-php80-php-common",
+      "ea-php80-php-curl",
+      "ea-php80-php-dba",
+      "ea-php80-php-devel",
+      "ea-php80-php-enchant",
+      "ea-php80-php-exif",
+      "ea-php80-php-fileinfo",
+      "ea-php80-php-fpm",
+      "ea-php80-php-ftp",
+      "ea-php80-php-gd",
+      "ea-php80-php-gettext",
+      "ea-php80-php-gmp",
+      "ea-php80-php-iconv",
+      "ea-php80-php-imap",
+      "ea-php80-php-intl",
+      "ea-php80-php-ldap",
+      "ea-php80-php-mbstring",
+      "ea-php80-php-mysqlnd",
+      "ea-php80-php-odbc",
+      "ea-php80-php-pdo",
+      "ea-php80-php-pgsql",
+      "ea-php80-php-posix",
+      "ea-php80-php-process",
+      "ea-php80-php-pspell",
+      "ea-php80-php-snmp",
+      "ea-php80-php-soap",
+      "ea-php80-php-sockets",
+      "ea-php80-php-tidy",
+      "ea-php80-php-xml",
+      "ea-php80-php-zip",
+      "ea-php80-runtime"
    ],
-   "name" : "All PHP Options + ZendGuard",
    "tags" : [
+      "All PHP Opts",
       "Apache 2.4",
       "PHP 7.3",
       "PHP 7.4",
-      "All PHP Opts"
-   ]
+      "PHP 8.0"
+   ],
+   "version" : 0.4
 }
