@@ -56,7 +56,7 @@
    "tags" : [
       "Apache 2.4",
       "Ruby 2.7",
-      "Passenger 5.1",
+      "Passenger 6.0.7",
       "Node.js 10.15"
    ],
    "version" : "0.3"

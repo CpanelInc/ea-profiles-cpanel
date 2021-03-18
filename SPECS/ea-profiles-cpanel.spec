@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 52
+%define release_prefix 53
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -35,6 +35,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Fri Mar 12 2021 Cory McIntire <cory@cpanel.net> - 1.0-53
+- EA-9481: Update Phusion passenger version
+
 * Tue Mar 02 2021 Travis Holloway <t.holloway@cpanel.net> - 1.0-52
 - EA-9613: Update “allphp allphp-opcache default” profile(s):  add “ea-php80” based on “ea-php73”
 
