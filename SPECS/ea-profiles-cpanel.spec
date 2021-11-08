@@ -37,6 +37,7 @@ rm -rf %{buildroot}
 %changelog
 * Mon Nov 08 2021 Dan Muey <dan@cpanel.net> - 1.0-54
 - ZC-9469: remove ea-php..-build from allphp-opcache.json
+- ZC-9470: Remove php[73|74|80]-php-gmp virtual packages from profiles (they already have php[73|74|80]-php-common)
 
 * Fri Mar 12 2021 Cory McIntire <cory@cpanel.net> - 1.0-53
 - EA-9481: Update Phusion passenger version
