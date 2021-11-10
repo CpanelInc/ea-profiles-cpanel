@@ -1,3 +1,4 @@
 {
+    "remove_from_install": [ "rubypassenger.*\\.json" ],
     "dont_override_config": 0
 }
