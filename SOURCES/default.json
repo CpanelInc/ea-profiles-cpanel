@@ -32,6 +32,7 @@
       "ea-php74-php-xml",
       "ea-php74-runtime",
       "ea-php74-php-fpm",
+      "ea-php74-php-zip",
       "ea-php80",
       "ea-php80-php-bcmath",
       "ea-php80-php-calendar",
@@ -47,7 +48,8 @@
       "ea-php80-php-sockets",
       "ea-php80-php-xml",
       "ea-php80-runtime",
-      "ea-php80-php-fpm"
+      "ea-php80-php-fpm",
+      "ea-php80-php-zip"
    ],
    "tags" : [
       "Apache 2.4",
