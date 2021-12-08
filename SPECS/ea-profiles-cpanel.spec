@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 55
+%define release_prefix 56
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -35,13 +35,12 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Wed Dec 08 2021 Julian Brown <julian.brown@cpanel.net> - 1.0-56
+- ZC-9367: Add php-zip to default profile
 
 * Mon Dec 06 2021 Travis Holloway <t.holloway@cpanel.net> - 1.0-55
 - EA-10325: Update “mpm_itk worker” profile(s):  add “ea-php74”
 - EA-10325: Update “allphp allphp-opcache default mpm_itk worker” profile(s):  remove “ea-php73”
-
-* Tue Nov 23 2021 Julian Brown <julian.brown@cpanel.net> - 1.0-55
-- ZC-9367: Add php-zip to default profile
 
 * Mon Nov 08 2021 Dan Muey <dan@cpanel.net> - 1.0-54
 - ZC-9469: remove ea-php..-build from allphp-opcache.json
