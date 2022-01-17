@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 56
+%define release_prefix 57
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -35,6 +35,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Wed Jan 12 2022 Dan Muey <dan@cpanel.net> - 1.0-57
+- ZC-8539: Create Default NGINX® profile
+
 * Wed Dec 08 2021 Julian Brown <julian.brown@cpanel.net> - 1.0-56
 - ZC-9367: Add php-zip to default profile
 
