@@ -1,11 +1,10 @@
 {
-   "version" : "0.5",
    "desc" : "This profile includes the modules from the Basic profile but replaces MPM Prefork and Mod Ruid2 with MPM ITK to further increase security for your server. MPM ITK creates a more secure environment than Mod Ruid2, but uses more resources. Note: Some feature of MPM ITK are not compatible with CentOS 6 kernels, see our documentation for more information.",
+   "name" : "cPanel Default + MPM ITK",
    "pkgs" : [
       "ea-apache24",
       "ea-apr",
       "ea-apr-util",
-      "ea-php74",
       "ea-apache24-mod_mpm_itk",
       "ea-apache24-mod_mpm_prefork",
       "ea-apache24-mod_ssl",
@@ -16,28 +15,28 @@
       "ea-apache24-mod_cgi",
       "ea-apache24-mod_proxy_fcgi",
       "ea-apache24-mod_security2",
-      "ea-php80",
-      "ea-php80-php-bcmath",
-      "ea-php80-php-calendar",
-      "ea-php80-php-curl",
-      "ea-php80-php-ftp",
-      "ea-php80-php-gd",
-      "ea-php80-php-iconv",
-      "ea-php80-php-imap",
-      "ea-php80-php-mbstring",
-      "ea-php80-php-mysqlnd",
-      "ea-php80-php-pdo",
-      "ea-php80-php-posix",
-      "ea-php80-php-sockets",
-      "ea-php80-php-xml",
-      "ea-php80-runtime",
-      "ea-php80-php-fpm",
-      "ea-php80-php-zip"
+      "ea-php81",
+      "ea-php81-php-bcmath",
+      "ea-php81-php-calendar",
+      "ea-php81-php-curl",
+      "ea-php81-php-ftp",
+      "ea-php81-php-gd",
+      "ea-php81-php-iconv",
+      "ea-php81-php-imap",
+      "ea-php81-php-mbstring",
+      "ea-php81-php-mysqlnd",
+      "ea-php81-php-pdo",
+      "ea-php81-php-posix",
+      "ea-php81-php-sockets",
+      "ea-php81-php-xml",
+      "ea-php81-runtime",
+      "ea-php81-php-fpm",
+      "ea-php81-php-zip"
    ],
-   "name" : "cPanel Default + MPM ITK",
    "tags" : [
       "Apache 2.4",
-      "PHP 8.0",
-      "MPM ITK"
-   ]
+      "MPM ITK",
+      "PHP 8.1"
+   ],
+   "version" : 0.8
 }
