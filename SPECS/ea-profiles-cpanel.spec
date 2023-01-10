@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 59
+%define release_prefix 60
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -19,13 +19,6 @@ rm -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
 install %{_sourcedir}/*.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/
 
-%if 0%{?rhel} < 8
-   mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/allphp-c7.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/allphp.json
-   mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/allphp-opcache-c7.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
-%else
-   rm -rf %{buildroot}/etc/cpanel/ea4/profiles/cpanel/allphp-c7*.json
-%endif
-
 %if 0%{?rhel} > 6
     rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
     mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
@@ -42,6 +35,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Tue Jan 10 2023 Dan Muey <dan@cpanel.net> - 1.0-60
+- ZC-10584: Drop special C7 allphp profiles since PHP 8.2 is available on C7
+
 * Thu Dec 22 2022 Dan Muey <dan@cpanel.net> - 1.0-59
 - ZC-10447: Update profiles for PHP 7.4 being EOL and PHP 8.2 being available
 
