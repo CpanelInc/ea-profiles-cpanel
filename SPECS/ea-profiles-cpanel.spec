@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 60
+%define release_prefix 61
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -20,8 +20,13 @@ rm -rf %{buildroot}
 install %{_sourcedir}/*.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/
 
 %if 0%{?rhel} > 6
-    rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
-    mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+    %if 0%{?rhel} > 8
+        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
+        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json
+    %else
+        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
+        mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+    %endif
 %else
     rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json
     mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
@@ -35,6 +40,9 @@ rm -rf %{buildroot}
 /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
+* Fri Mar 31 2023 Thomas Baugh <thomas.baugh@cpanel.net> - 1.0-61
+- Don't ship rubypassenger27.json on CentOS 9+
+
 * Tue Jan 10 2023 Dan Muey <dan@cpanel.net> - 1.0-60
 - ZC-10584: Drop special C7 allphp profiles since PHP 8.2 is available on C7
 
