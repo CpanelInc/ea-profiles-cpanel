@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 61
+%define release_prefix 62
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -10,36 +10,53 @@ URL:            http://www.cpanel.net
 Vendor:         cPanel, Inc.
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+Source1: pkg.postinst
+Source2: pkg.postrm
+Source3: update-available-profiles
+
 %description
 This package provides the default profiles available from cPanel
 to choose from with EasyApache4.
 
 %install
 rm -rf %{buildroot}
-%{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
-install %{_sourcedir}/*.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/
+%{__mkdir_p} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin
+install %{_sourcedir}/*.json %{buildroot}/opt/cpanel/ea-profiles-cpanel/
+install %{SOURCE3} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %if 0%{?rhel} > 6
     %if 0%{?rhel} > 8
-        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
-        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json
+        rm -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger24.json
+        rm -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger27.json
     %else
-        rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json
-        mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+        rm -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger24.json
+        mv -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger27.json %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger.json
     %endif
 %else
-    rm -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger27.json
-    mv -f %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger24.json %{buildroot}/etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+    rm -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger27.json
+    mv -f %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger24.json %{buildroot}/opt/cpanel/ea-profiles-cpanel/rubypassenger.json
 %endif
 
 %clean
 rm -rf %{buildroot}
 
+%post
+
+%include %{SOURCE1}
+
+%postun
+
+%include %{SOURCE2}
+
 %files
 %defattr(0644,root,root,0755)
-/etc/cpanel/ea4/profiles/cpanel
+/opt/cpanel/ea-profiles-cpanel
+%attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %changelog
+* Thu Jun 15 2023 Dan Muey <dan@cpanel.net> - 1.0-62
+- ZC-10971: Add WP² profile and license-based profile support
+
 * Fri Mar 31 2023 Thomas Baugh <thomas.baugh@cpanel.net> - 1.0-61
 - Don't ship rubypassenger27.json on CentOS 9+
 

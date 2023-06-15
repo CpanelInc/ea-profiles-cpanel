@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# uninstall not upgrade (that is handled in postinst)
+if [[ "$1" == "0" || "$1" == "remove" || "$1" == "purge" ]]; then
+    rm -rf /etc/cpanel/ea4/profiles/cpanel
+fi

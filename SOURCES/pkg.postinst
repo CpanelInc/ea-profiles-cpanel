@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# We want this on upgrade and install so no if statement
+/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
