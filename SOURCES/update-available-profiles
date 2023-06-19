@@ -7,12 +7,13 @@ mkdir -p /etc/cpanel/ea4/profiles/cpanel
 # 2. Make symlinks in /etc/cpanel/ea4/profiles/cpanel/ to profiles in /opt/cpanel/ea-profiles-cpanel/
 #    - The symlinks are what will be available to EA4 UI/CLI.
 #    - There should always be /etc/cpanel/ea4/profiles/cpanel/default.json
-if [[ -f /var/cpanel/wp2 ]]; then
-   ln -s /opt/cpanel/ea-profiles-cpanel/wp2.json /etc/cpanel/ea4/profiles/cpanel/default.json
+SERVER_TYPE=$(readlink -n /usr/local/cpanel/server.type);
+if [[ -f "/opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json" ]]; then
+   ln -s /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json /etc/cpanel/ea4/profiles/cpanel/default.json
 else
    pushd /opt/cpanel/ea-profiles-cpanel/
 
-   for profile in $(ls *.json |grep -v wp2.json); do
+   for profile in $(ls *.json |grep -v server-type-*.json); do
        ln -s /opt/cpanel/ea-profiles-cpanel/$profile /etc/cpanel/ea4/profiles/cpanel/$profile
    done
 

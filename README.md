@@ -24,3 +24,9 @@ Instead of installing directly to `/etc/cpanel/ea4/profiles/cpanel/` we:
    * We don’t really support license type changes so that is moot.
 
 Other vendors can do the same, just need to `s/cpanel/your-name/g` in the info above 👍
+
+## Server Type as Default
+
+If `readlink -n /usr/local/cpanel/server.type` has a corresponding `/opt/cpanel/ea-profiles-cpanel/server-type-<SERVERTYPE>.json` then that is what `/etc/cpanel/ea4/profiles/cpanel/default.json` will point to. It will also be the only profile in `/etc/cpanel/ea4/profiles/cpanel/`.
+
+Otherwise `/etc/cpanel/ea4/profiles/cpanel/` will contain all profiles whose file names do not begin w/ `server-type-`.
