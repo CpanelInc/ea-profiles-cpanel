@@ -9,13 +9,15 @@ mkdir -p /etc/cpanel/ea4/profiles/cpanel
 #    - There should always be /etc/cpanel/ea4/profiles/cpanel/default.json
 SERVER_TYPE=$(readlink -n /usr/local/cpanel/server.type);
 if [[ -f "/opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json" ]]; then
+   echo "Doing “$SERVER_TYPE” mode EA4 default profile."
    ln -s /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json /etc/cpanel/ea4/profiles/cpanel/default.json
 else
-   pushd /opt/cpanel/ea-profiles-cpanel/
+   echo "Doing standard EA4 profiles."
+   pushd /opt/cpanel/ea-profiles-cpanel/ > /dev/null
 
    for profile in $(ls *.json |grep -v server-type-*.json); do
        ln -s /opt/cpanel/ea-profiles-cpanel/$profile /etc/cpanel/ea4/profiles/cpanel/$profile
    done
 
-   popd
+   popd > /dev/null
 fi
