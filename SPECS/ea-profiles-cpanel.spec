@@ -53,6 +53,10 @@ rm -rf %{buildroot}
 /opt/cpanel/ea-profiles-cpanel
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
+%if 0%{?rhel} > 7
+%ghost /etc/cpanel/ea4/profiles/cpanel/*.json
+%endif
+
 %changelog
 * Thu Jun 15 2023 Dan Muey <dan@cpanel.net> - 1.0-62
 - ZC-10971: Add WP² profile and license-based profile support
