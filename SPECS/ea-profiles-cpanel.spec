@@ -11,7 +11,7 @@ Vendor:         cPanel, Inc.
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Source1: pkg.postinst
-Source2: pkg.postrm
+Source2: pkg.prerm
 Source3: update-available-profiles
 
 %description
@@ -44,7 +44,7 @@ rm -rf %{buildroot}
 
 %include %{SOURCE1}
 
-%postun
+%preun
 
 %include %{SOURCE2}
 
