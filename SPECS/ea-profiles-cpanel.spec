@@ -54,7 +54,14 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %if 0%{?rhel} > 7
-%ghost /etc/cpanel/ea4/profiles/cpanel
+%ghost /etc/cpanel/ea4/profiles/cpanel/default.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/allphp.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/default-nginx.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/nophp.json
+%ghost /etc/cpanel/ea4/profiles/cpanel/worker.json
 %endif
 
 %changelog
