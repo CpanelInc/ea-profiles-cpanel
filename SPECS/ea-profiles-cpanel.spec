@@ -54,7 +54,7 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %if 0%{?rhel} > 7
-%ghost /etc/cpanel/ea4/profiles/cpanel/*.json
+%ghost /etc/cpanel/ea4/profiles/cpanel
 %endif
 
 %changelog
