@@ -54,6 +54,10 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %if 0%{?rhel} > 7
+# So that they are not cleanded up by dnf after being created in %post:
+#    each potential profile.json needs to explicitly be a %ghost
+#    %ghost /etc/cpanel/ea4/profiles/cpanel does not solve this
+#    %ghost /etc/cpanel/ea4/profiles/cpanel/*.json does not solve this
 %ghost /etc/cpanel/ea4/profiles/cpanel/default.json
 %ghost /etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
 %ghost /etc/cpanel/ea4/profiles/cpanel/allphp.json
