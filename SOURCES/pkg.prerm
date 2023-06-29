@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # uninstall not upgrade (that is handled in postinst)
-if [[ "$1" == "0" || "$1" == "remove" || "$1" == "purge" ]]; then
+if [[ "$1" == "0" ]]; then
     echo "Cleaning active cpanel profiles directory."
     rm -rf /etc/cpanel/ea4/profiles/cpanel/*.json
+elif [[ "$1" == "remove" || "$1" == "purge" ]]; then
+    echo "Removing active cpanel profiles directory."
+    rm -rf /etc/cpanel/ea4/profiles/cpanel
 fi
