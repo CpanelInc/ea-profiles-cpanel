@@ -54,22 +54,20 @@ rm -rf %{buildroot}
 /opt/cpanel/ea-profiles-cpanel
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
-%if 0%{?rhel} > 7
 # So that they are not cleanded up by dnf after being created in %post:
 #    the dir needs to be owned by the pk &&
 #       each potential profile.json needs to explicitly be a %ghost
 #    %ghost /etc/cpanel/ea4/profiles/cpanel does not solve this
 #    %ghost /etc/cpanel/ea4/profiles/cpanel/*.json does not solve this
 %dir /etc/cpanel/ea4/profiles/cpanel
-%ghost /etc/cpanel/ea4/profiles/cpanel/default.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/allphp.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/default-nginx.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/nophp.json
-%ghost /etc/cpanel/ea4/profiles/cpanel/worker.json
-%endif
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/default.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/allphp.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/default-nginx.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/nophp.json
+%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/worker.json
 
 %changelog
 * Thu Jun 15 2023 Dan Muey <dan@cpanel.net> - 1.0-62
