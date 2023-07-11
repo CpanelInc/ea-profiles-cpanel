@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# deb only to avoid needless:
+#     dpkg: warning: unable to delete old directory '/etc/cpanel/ea4/profiles/cpanel': Directory not empty
+# for install and upgrade as postinst will do the needful
+echo "Pre-cleaning active cpanel profiles directory."
+rm -rf /etc/cpanel/ea4/profiles/cpanel/*.json

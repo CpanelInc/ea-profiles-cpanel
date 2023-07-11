@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# 1. ensure /etc/cpanel/ea4/profiles/cpanel exists and is empty
+rm -rf /etc/cpanel/ea4/profiles/cpanel
+mkdir -p /etc/cpanel/ea4/profiles/cpanel
+
+# 2. Make symlinks in /etc/cpanel/ea4/profiles/cpanel/ to profiles in /opt/cpanel/ea-profiles-cpanel/
+#    - The symlinks are what will be available to EA4 UI/CLI.
+#    - There should always be /etc/cpanel/ea4/profiles/cpanel/default.json
+SERVER_TYPE=$(readlink -n /usr/local/cpanel/server.type);
+if [[ -f "/opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json" ]]; then
+   echo "Doing “$SERVER_TYPE” mode EA4 default profile."
+   ln -s /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE.json /etc/cpanel/ea4/profiles/cpanel/default.json
+else
+   echo "Doing standard EA4 profiles."
+   pushd /opt/cpanel/ea-profiles-cpanel/ > /dev/null
+
+   for profile in $(ls *.json |grep -v server-type-*.json); do
+       ln -s /opt/cpanel/ea-profiles-cpanel/$profile /etc/cpanel/ea4/profiles/cpanel/$profile
+   done
+
+   popd > /dev/null
+fi
