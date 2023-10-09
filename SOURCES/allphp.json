@@ -95,5 +95,5 @@
    ],
    "name" : "All PHP Options + ZendGuard",
    "version" : 1.0,
-   "desc" : "This is the default cPanel profile plus PHP 7.4 plus every PHP option (sans recode and opcache due to incompatibilities). This package can host multiple sites and users."
+   "desc" : "This is the default cPanel profile plus every supported PHP version and each versions’ options (sans recode and opcache due to incompatibilities). This package can host multiple sites and users."
 }

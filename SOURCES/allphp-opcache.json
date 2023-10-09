@@ -1,6 +1,6 @@
 {
    "version" : 0.9,
-   "desc" : "This is the MPM Worker cPanel profile plus PHP 7.3 plus every PHP option (sans recode and zendguard due to incompatibilities). This package can host multiple sites and users.",
+   "desc" : "This is the MPM Worker cPanel profile plus every supported PHP version and each versions’ options (sans recode and zendguard due to incompatibilities). This package can host multiple sites and users.",
    "name" : "All PHP Options + OpCache",
    "tags" : [
       "All PHP Opts",
