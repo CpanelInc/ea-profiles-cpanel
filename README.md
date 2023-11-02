@@ -1,3 +1,9 @@
+# Display Order in EA4 UI
+
+It sorts by name. If there is a numeric prefix (e.g. `007.bond.json`) it is removed from display (`bond`).
+
+`default.json` will be made to be first regardless of other names via WPX-1874.
+
 # Making different profiles available based on the server’s current state
 
 ## Goal
