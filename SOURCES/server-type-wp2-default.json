@@ -68,8 +68,10 @@
     "ea-nginx"
   ],
   "tags": [
-    "PHP 8",
-    "wordpress",
-    "default"
+    "PHP 7.4",
+    "NGINX",
+    "WordPress",
+    "WP Squared",
+    "WP²"
   ]
 }
