@@ -24,21 +24,21 @@ rm -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
 install %{SOURCE3} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
-# NOTE: on the distribution of profile files in the target directories, via install_profiles.pl
+# NOTE: on the distribution of profile files to /etc/cpanel/ea4/profiles/cpanel
 #
 # Normally a file of the ilk SOURCES/*.json will appear in /opt/cpanel/ea-profiles-cpanel
 # UNLESS the file is of the name server-type-XXX-profile_name.json
+# server_type is defined by /usr/local/cpanel/server.type, data symlink.
 # NOTE: server-type must not contain a dash, so `wp2` is good, whereas `foo-bar` is bad.
-# In which case that file will be distributed to the following directory
-# /opt/cpanel/ea-profiles-cpanel/server-type-XXX/profile_name.json
 #
 # This takes advantage of the update-available-profiles that will distribute different profiles based on
 # server.type
 
-cp %{_sourcedir}/install_profiles.pl install_profiles.pl
-chmod a+x install_profiles.pl
-
-./install_profiles.pl %{_sourcedir} %{buildroot}
+for file in $(ls %{_sourcedir}/*.json);
+do
+    base=`basename $file`
+    install $file %{buildroot}/opt/cpanel/ea-profiles-cpanel/$base 
+done
 
 %if 0%{?rhel} > 6
     %if 0%{?rhel} > 8

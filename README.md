@@ -33,7 +33,7 @@ Other vendors can do the same, just need to `s/cpanel/your-name/g` in the info a
 
 ## Server Type
 
-If `readlink -n /usr/local/cpanel/server.type` has a corresponding `/opt/cpanel/ea-profiles-cpanel/server-type-<SERVERTYPE>` directory then the profiles in that directory will be symlinked to `/etc/cpanel/ea4/profiles/cpanel` directory.  Please make sure you have a profile with the name `default.json` in the `server-type` directory.
+If `readlink -n /usr/local/cpanel/server.type` is `<SERVERTYPE>` and there are files globbed to `/opt/cpanel/ea-profiles-cpanel/server-type-<SERVERTYPE>-<PROFILENAME>.json` then it will symlink that file to <PROFILENAME>.json in the profiles directory.   Please make sure you have a profile with the name `default.json`.
 
 **Note:** server-type must not contain a dash, so `wp2` is good, whereas `foo-bar` is bad.
 

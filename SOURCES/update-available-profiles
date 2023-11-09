@@ -5,18 +5,18 @@ rm -rf /etc/cpanel/ea4/profiles/cpanel
 mkdir -p /etc/cpanel/ea4/profiles/cpanel
 
 SERVER_TYPE=$(readlink -n /usr/local/cpanel/server.type);
-server_type_dir="/opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE"
-if [[ -d $server_type_dir ]]; then
-    # 2. Make symlinks in /etc/cpanel/ea4/profiles/cpanel/ to profiles in $server_type_dir
+num=`ls -1 /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-*.json 2> /dev/null | wc -l`
+if (( $num > 0 )); then
+    # 2. Make symlinks in /etc/cpanel/ea4/profiles/cpanel/ to profiles with the name likeness of server-type-$SERVER-TYPE-*.json
     #    - The symlinks are what will be available to EA4 UI/CLI.
     #    - There should always be /etc/cpanel/ea4/profiles/cpanel/default.json
+    #    - if the name is server-type-XYZ-default.json, the final profile will have the name default.json
 
     echo "Doing “$SERVER_TYPE” mode EA4 default profile."
-    for profile in `ls $server_type_dir/*.json`
+    for profile in `ls -1 /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-* | perl -n -e 'if (m/server-type-([^-]+)-([^-]+\.json)/) { print "$2\n"; }'`
     do
-        base=`basename $profile`
-        echo "Linking Profile $base"
-        ln -s $profile /etc/cpanel/ea4/profiles/cpanel/$base
+        echo $profile
+        ln -s /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-$profile /etc/cpanel/ea4/profiles/cpanel/$profile
     done
 else
     # 2. Make symlinks in /etc/cpanel/ea4/profiles/cpanel/ to profiles in /opt/cpanel/ea-profiles-cpanel/
@@ -26,9 +26,11 @@ else
    echo "Doing standard EA4 profiles."
    pushd /opt/cpanel/ea-profiles-cpanel/ > /dev/null
 
-   for profile in $(ls *.json); do
-       ln -s /opt/cpanel/ea-profiles-cpanel/$profile /etc/cpanel/ea4/profiles/cpanel/$profile
-   done
+    for profile in `ls *.json | grep -v server-type-`; do
+        echo "PROFILE :$profile:"
+        ln -s /opt/cpanel/ea-profiles-cpanel/$profile /etc/cpanel/ea4/profiles/cpanel/$profile
+    done
 
    popd > /dev/null
 fi
+
