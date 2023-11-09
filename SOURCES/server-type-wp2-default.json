@@ -64,7 +64,6 @@
     "ea-php74-php-mysqlnd",
     "ea-php74-php-sockets",
     "ea-php74-php-zip",
-    "ea-php74-php",
     "ea-apache24-mod_remoteip",
     "ea-nginx"
   ],

@@ -64,7 +64,6 @@
     "ea-php82-php-mysqlnd",
     "ea-php82-php-sockets",
     "ea-php82-php-zip",
-    "ea-php82-php",
     "ea-apache24-mod_remoteip",
     "ea-nginx"
   ],

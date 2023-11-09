@@ -13,7 +13,7 @@ if (( $num > 0 )); then
     #    - if the name is server-type-XYZ-default.json, the final profile will have the name default.json
 
     echo "Doing “$SERVER_TYPE” mode EA4 default profile."
-    for profile in `ls -1 /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-* | perl -n -e 'if (m/server-type-([^-]+)-([^-]+\.json)/) { print "$2\n"; }'`
+    for profile in `ls -1 /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-* | perl -n -e 'if (m/server-type-[^-]+-([^-]+\.json)/) { print "$1\n"; }'`
     do
         ln -s /opt/cpanel/ea-profiles-cpanel/server-type-$SERVER_TYPE-$profile /etc/cpanel/ea4/profiles/cpanel/$profile
     done
