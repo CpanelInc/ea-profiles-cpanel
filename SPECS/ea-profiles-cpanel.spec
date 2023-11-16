@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 64
+%define release_prefix 65
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -85,6 +85,9 @@ rm -rf %{buildroot}
 %ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/worker.json
 
 %changelog
+* Tue Nov 14 2023 Dan Muey <dan@cpanel.net> - 1.0-65
+- ZC-11356: Add additional WP2 profiles
+
 * Tue Nov 07 2023 Julian Brown <julian.brown@cpanel.net> - 1.0-64
 - ZC-11352: Allow WP2 to provide a directory of profiles as the default
 
