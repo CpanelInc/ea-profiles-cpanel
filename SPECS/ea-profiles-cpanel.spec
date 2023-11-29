@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 63
+%define release_prefix 65
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -22,8 +22,23 @@ to choose from with EasyApache4.
 rm -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin
 %{__mkdir_p} %{buildroot}/etc/cpanel/ea4/profiles/cpanel
-install %{_sourcedir}/*.json %{buildroot}/opt/cpanel/ea-profiles-cpanel/
 install %{SOURCE3} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
+
+# NOTE: on the distribution of profile files to /etc/cpanel/ea4/profiles/cpanel
+#
+# Normally a file of the ilk SOURCES/*.json will appear in /opt/cpanel/ea-profiles-cpanel
+# UNLESS the file is of the name server-type-XXX-profile_name.json
+# server_type is defined by /usr/local/cpanel/server.type, data symlink.
+# NOTE: server-type must not contain a dash, so `wp2` is good, whereas `foo-bar` is bad.
+#
+# This takes advantage of the update-available-profiles that will distribute different profiles based on
+# server.type
+
+for file in $(ls %{_sourcedir}/*.json);
+do
+    base=`basename $file`
+    install $file %{buildroot}/opt/cpanel/ea-profiles-cpanel/$base 
+done
 
 %if 0%{?rhel} > 6
     %if 0%{?rhel} > 8
@@ -70,6 +85,12 @@ rm -rf %{buildroot}
 %ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/worker.json
 
 %changelog
+* Tue Nov 14 2023 Dan Muey <dan@cpanel.net> - 1.0-65
+- ZC-11356: Add additional WP2 profiles
+
+* Tue Nov 07 2023 Julian Brown <julian.brown@cpanel.net> - 1.0-64
+- ZC-11352: Allow WP2 to provide a directory of profiles as the default
+
 * Fri Oct 06 2023 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-63
 - ZC-11253: Update EA4 profiles - Add ea-php82, Remove ea-php80
 

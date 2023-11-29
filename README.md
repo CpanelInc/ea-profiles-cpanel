@@ -1,3 +1,9 @@
+# Display Order in EA4 UI
+
+It sorts by name. If there is a numeric prefix (e.g. `007.bond.json`) it is removed from display (`bond`).
+
+`default.json` will be made to be first regardless of other names via WPX-1874.
+
 # Making different profiles available based on the server’s current state
 
 ## Goal
@@ -25,8 +31,10 @@ Instead of installing directly to `/etc/cpanel/ea4/profiles/cpanel/` we:
 
 Other vendors can do the same, just need to `s/cpanel/your-name/g` in the info above 👍
 
-## Server Type as Default
+## Server Type
 
-If `readlink -n /usr/local/cpanel/server.type` has a corresponding `/opt/cpanel/ea-profiles-cpanel/server-type-<SERVERTYPE>.json` then that is what `/etc/cpanel/ea4/profiles/cpanel/default.json` will point to. It will also be the only profile in `/etc/cpanel/ea4/profiles/cpanel/`.
+If `readlink -n /usr/local/cpanel/server.type` is `<SERVERTYPE>` and there are files globbed to `/opt/cpanel/ea-profiles-cpanel/server-type-<SERVERTYPE>-<PROFILENAME>.json` then it will symlink that file to <PROFILENAME>.json in the profiles directory. Please make sure you have a profile with the name `default.json`.
 
-Otherwise `/etc/cpanel/ea4/profiles/cpanel/` will contain all profiles whose file names do not begin w/ `server-type-`.
+**Note:** server-type must not contain a dash, so `wp2` is good, whereas `foo-bar` is bad.
+
+Otherwise `/etc/cpanel/ea4/profiles/cpanel/` will contain all profiles `*.json` that are in `/opt/cpanel/ea-profiles-cpanel`..
