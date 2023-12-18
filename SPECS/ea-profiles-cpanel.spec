@@ -68,7 +68,6 @@ rm -rf %{buildroot}
 %defattr(0644,root,root,0755)
 /opt/cpanel/ea-profiles-cpanel
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
-%dir /etc/cpanel/ea4/profiles/cpanel
 
 %changelog
 * Fri Dec 15 2023 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-66
