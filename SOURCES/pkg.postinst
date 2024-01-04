@@ -1,6 +1,4 @@
 #!/bin/bash
 
-# We want this on upgrade and install, and since  scriplet is %posttrans, only run when exists (not on removals)
-if [ -e "/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles" ]; then
-    /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
-fi
+# We want this on upgrade and install so no if statement
+/opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
