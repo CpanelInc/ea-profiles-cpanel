@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 67
+%define release_prefix 68
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -56,7 +56,7 @@ done
 %clean
 rm -rf %{buildroot}
 
-%post
+%posttrans
 
 %include %{SOURCE1}
 
@@ -69,22 +69,10 @@ rm -rf %{buildroot}
 /opt/cpanel/ea-profiles-cpanel
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
-# So that they are not cleanded up by dnf after being created in %post:
-#    the dir needs to be owned by the pk &&
-#       each potential profile.json needs to explicitly be a %ghost
-#    %ghost /etc/cpanel/ea4/profiles/cpanel does not solve this
-#    %ghost /etc/cpanel/ea4/profiles/cpanel/*.json does not solve this
-%dir /etc/cpanel/ea4/profiles/cpanel
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/default.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/rubypassenger.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/allphp.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/default-nginx.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/mpm_itk.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/nophp.json
-%ghost %attr(644, root, root) /etc/cpanel/ea4/profiles/cpanel/worker.json
-
 %changelog
+* Wed Jan 03 2024 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-68
+- ZC-11378: Add back original changes, change %post to %posttrans
+
 * Wed Dec 20 2023 Dan Muey <dan@cpanel.net> - 1.0-67
 - ZC-11494: Rolling “ea-profiles-cpanel” back to “562229d”: scriptlets seem to be happening out of order on a9
 
