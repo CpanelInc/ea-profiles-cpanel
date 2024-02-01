@@ -29,7 +29,7 @@ Instead of installing directly to `/etc/cpanel/ea4/profiles/cpanel/` we:
 5. When the servers state changes that script will need run also.
    * We don’t really support license type changes so that is moot.
 
-Other vendors can do the same, just need to `s/cpanel/your-name/g` in the info above 👍
+Other vendors can do the same, just need to `s/cpanel/your-name/g` in the info above (except `/etc/cpanel/ea4/profiles/cpanel/` which would need to be `/etc/cpanel/ea4/profiles/vendor/your-name/`).
 
 ## Server Type
 
