@@ -1,7 +1,7 @@
 Name:           ea-profiles-cpanel
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 68
+%define release_prefix 69
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -70,6 +70,9 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %changelog
+* Tue Mar 12 2024 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-69
+- ZC-11674: Add php-redis extension to WP2 profiles
+
 * Wed Jan 03 2024 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-68
 - ZC-11378: Add back original changes, change %post to %posttrans
 
