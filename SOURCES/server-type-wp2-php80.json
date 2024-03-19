@@ -38,6 +38,7 @@
     "ea-php80-php-mysqlnd",
     "ea-php80-php-pdo",
     "ea-php80-php-posix",
+    "ea-php80-php-redis",
     "ea-php80-php-sockets",
     "ea-php80-php-xml",
     "ea-php80-php-zip",
