@@ -1,7 +1,15 @@
 Name:           ea-profiles-cpanel
+
+# UGMO: Even though Epoch "is usually omitted because in majority of cases introducing
+#       an Epoch value skews the expected RPM behavior when comparing versions of packages."
+#       we do it here so that it will work correctly with Cloudlinux’s now-resolved
+#       ea-profiles-cpanel issues. See ZC-11574 && "5.3.1. The Epoch directive" at https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/packaging_and_distributing_software/advanced-topics#epoch-scriplets-and-triggers_advanced-topics
+#       debs also prefer not using Epoch for similar reasons: https://www.debian.org/doc/debian-policy/ch-controlfields.html#epochs-should-be-used-sparingly
+Epoch:          5
+
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 69
+%define release_prefix 70
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -37,7 +45,7 @@ install %{SOURCE3} %{buildroot}/opt/cpanel/ea-profiles-cpanel/bin/update-availab
 for file in $(ls %{_sourcedir}/*.json);
 do
     base=`basename $file`
-    install $file %{buildroot}/opt/cpanel/ea-profiles-cpanel/$base 
+    install $file %{buildroot}/opt/cpanel/ea-profiles-cpanel/$base
 done
 
 %if 0%{?rhel} > 6
@@ -70,6 +78,9 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %changelog
+* Tue Apr 02 2024 Dan Muey <dan@cpanel.net> - 1.0-70
+- ZC-11574: Set epoch to `5` to coordinate w/ Cloudlinux’s fixes
+
 * Tue Mar 12 2024 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-69
 - ZC-11674: Add php-redis extension to WP2 profiles
 
