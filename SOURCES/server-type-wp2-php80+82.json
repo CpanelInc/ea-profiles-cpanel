@@ -14,7 +14,7 @@
     "ea-apache24-mod_proxy_wstunnel",
     "ea-apache24-mod_proxy",
     "ea-apache24-mod_remoteip",
-    "ea-apache24-mod_ruid2",
+    "ea-apache24-mod_suexec",
     "ea-apache24-mod_security2",
     "ea-apache24-mod_ssl",
     "ea-apache24-mod_unique_id",
