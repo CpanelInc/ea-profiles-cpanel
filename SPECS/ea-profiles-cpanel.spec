@@ -9,7 +9,7 @@ Epoch:          5
 
 Version:        1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4552 for more details
-%define release_prefix 70
+%define release_prefix 71
 Release:        %{release_prefix}%{?dist}.cpanel
 Summary:        EasyApache4 Default Profiles
 License:        GPL
@@ -78,6 +78,9 @@ rm -rf %{buildroot}
 %attr(755,root,root) /opt/cpanel/ea-profiles-cpanel/bin/update-available-profiles
 
 %changelog
+* Thu May 30 2024 Brian Mendoza <brian.mendoza@cpanel.net> - 1.0-71
+- ZC-11857: Replace mod_ruid with mod_suexec for WP2 profiles
+
 * Tue Apr 02 2024 Dan Muey <dan@cpanel.net> - 1.0-70
 - ZC-11574: Set epoch to `5` to coordinate w/ Cloudlinux’s fixes
 
