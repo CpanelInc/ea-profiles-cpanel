@@ -1,0 +1,10 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  call-obs-workflow:
+    uses: webpros-cpanel/ea-tools/.github/workflows/obs.yml@main
