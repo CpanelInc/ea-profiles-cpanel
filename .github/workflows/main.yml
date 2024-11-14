@@ -9,3 +9,4 @@ on:
 jobs:
   call-obs-workflow:
     uses: webpros-cpanel/ea-tools/.github/workflows/obs.yml@main
+    secrets: inherit
