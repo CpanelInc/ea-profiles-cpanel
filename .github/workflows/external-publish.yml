@@ -5,7 +5,8 @@ on:
     branches:
       - main
       - production
+      - 2025-03.pek.*  ## WIP
 jobs:
   build:
-    uses: webpros-cpanel/ea-tools/.github/workflows/reusable-external-publish.yml@ghes
+    uses: webpros-cpanel/ea-tools/.github/workflows/reusable-external-publish.yml@2025-03.pek.ZC-12670.cpanelinc  ## ghes
     secrets: inherit
